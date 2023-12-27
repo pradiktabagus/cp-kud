@@ -1,21 +1,25 @@
 import SectionTitle from "../Common/SectionTitle";
-import SingleFeature from "./SingleFeature";
-import featuresData from "./featuresData";
-
+import SingleBlog from "@/components/Blog/SingleBlog";
+import blogData from "@/components/Blog/blogData";
 const Features = () => {
   return (
     <>
       <section id="features" className="py-16 md:py-20 lg:py-28">
         <div className="container">
           <SectionTitle
-            title="Main Features"
+            title="Produk Kami"
             paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
             center
           />
 
-          <div className="grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
-            {featuresData.map((feature) => (
-              <SingleFeature key={feature.id} feature={feature} />
+          <div className="-mx-4 flex flex-wrap justify-center">
+           {blogData.map((blog) => (
+              <div
+                key={blog.id}
+                className="w-full px-4 md:w-2/3 lg:w-1/2 xl:w-1/3"
+              >
+                <SingleBlog blog={blog} />
+              </div>
             ))}
           </div>
         </div>
